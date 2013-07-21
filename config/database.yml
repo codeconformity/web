@@ -1,0 +1,20 @@
+defaults: &defaults
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+
+development:
+  <<: *defaults
+  database: code_conformity_development
+
+test: &test
+  <<: *defaults
+  database: code_conformity_test
+
+production:
+  <<: *defaults
+  database: code_conformity__production
+
+cucumber:
+  <<: *test
