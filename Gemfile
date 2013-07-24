@@ -4,6 +4,7 @@ ruby '2.0.0'
 
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
+gem 'draper'
 gem 'jquery-rails'
 gem 'omniauth-github'
 gem 'pg'
