@@ -17,3 +17,16 @@ guard :rspec do
   watch('app/controllers/application_controller.rb')  { "spec/controllers" }
 end
 
+
+guard 'bundler' do
+  watch('Gemfile')
+end
+
+### Guard::Konacha
+#  available options:
+#  - :spec_dir, defaults to 'spec/javascripts'
+#  - :driver, defaults to :selenium
+guard :konacha do
+  watch(%r{^app/assets/javascripts/(.*)\.js(\.coffee)?$}) { |m| "#{m[1]}_spec.js" }
+  watch(%r{^spec/javascripts/.+_spec(\.js|\.js\.coffee)$})
+end
