@@ -10,3 +10,7 @@
           else
             li
               linkTo 'sessions.new' | Sign In
+
+.container#main
+  .content
+    == outlet
