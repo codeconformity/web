@@ -351,6 +351,7 @@ DEPENDENCIES
   guard-rspec
   heroku-deflater
   jquery-rails
+  konacha
   launchy
   omniauth-github
   pg

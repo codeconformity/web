@@ -4,5 +4,5 @@ DS.RESTAdapter.reopen
   namespace: 'api/v1'
 
 App.Store = DS.Store.extend
-  revision: 11
+  revision: 12
   adapter: DS.RESTAdapter.create()

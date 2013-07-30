@@ -49,3 +49,5 @@ end
 group :production do
   gem 'heroku-deflater'
 end
+
+gem "konacha", group: [:development, :test]

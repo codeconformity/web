@@ -21,3 +21,15 @@ end
 guard 'bundler' do
   watch('Gemfile')
 end
+
+### Guard::Konacha
+#  available options:
+#  - :run_all_on_start, defaults to :true
+#  - :notification, defaults to :true
+#  - :rails_environment_file, location of rails environment file,
+#    should be able to find it automatically
+require 'capybara/poltergeist'
+guard :konacha, driver: :poltergeist do
+  watch(%r{^app/assets/javascripts/(.*)\.js(\.coffee)?$}) { |m| "#{m[1]}_spec.js" }
+  watch(%r{^spec/javascripts/.+_spec(\.js|\.js\.coffee)$})
+end
