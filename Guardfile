@@ -1,10 +1,10 @@
-guard 'cucumber' do
+guard 'cucumber', all_on_start: true, all_after_pass: true, keep_failed: true, cli: '--format pretty' do
   watch(%r{^features/.+\.feature$})
   watch(%r{^features/support/.+$})          { 'features' }
   watch(%r{^features/step_definitions/(.+)_steps\.rb$}) { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'features' }
 end
 
-guard :rspec do
+guard :rspec, all_on_start: true, all_after_pass: true, keep_failed: true do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
@@ -17,3 +17,7 @@ guard :rspec do
   watch('app/controllers/application_controller.rb')  { "spec/controllers" }
 end
 
+
+guard 'bundler' do
+  watch('Gemfile')
+end

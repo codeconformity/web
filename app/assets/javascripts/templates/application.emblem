@@ -13,4 +13,6 @@
 
 .container#main
   .content
+    if currentUser.isSignedIn
+      currentUser.fullName
     == outlet

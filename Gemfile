@@ -23,10 +23,16 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development do
   gem 'dotenv-rails'
+  gem 'ember-konacha-rails', github: 'kristianmandrup/ember-konacha-rails'
   gem 'foreman'
   gem 'guard'
+  gem 'guard-bundler'
   gem 'guard-cucumber'
+  gem 'guard-konacha', github: 'alexgb/guard-konacha',
+    branch: 'konacha_3_0_compatibility'
+  gem 'guard-livereload'
   gem 'guard-rspec'
+  gem 'rack-livereload'
 end
 
 group :test do
@@ -36,6 +42,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'launchy'
   gem 'rspec-rails'
 end
 
