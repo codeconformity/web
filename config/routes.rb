@@ -1,9 +1,26 @@
 Web::Application.routes.draw do
-  root 'pages#index'
+  root 'ember#index'
 
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   devise_scope :user do
     get 'sign_in', to: 'devise/sessions#new'
     get 'sign_out', to: 'devise/sessions#destroy'
   end
+
+  mount Api, at: '/'
+
+  class FormatTest
+    attr_accessor :mime_type
+
+    def initialize(format)
+      @mime_type = Mime::Type.lookup_by_extension(format)
+    end
+
+    def matches?(request)
+      request.format == mime_type
+    end
+  end
+
+  get '*foo', to: 'ember#index', constraints: FormatTest.new(:html)
+  get '/',    to: 'ember#index', constraints: FormatTest.new(:html)
 end
