@@ -1,0 +1,5 @@
+.row
+  .span12
+    section#sign-in
+      .page-header Sign In
+      a href="/users/auth/github" Sign in with GitHub
