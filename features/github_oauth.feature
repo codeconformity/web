@@ -1,3 +1,4 @@
+@javascript
 Feature: GitHub OAuth
   In order to be able to use CodeConformity
   As a user
@@ -5,12 +6,12 @@ Feature: GitHub OAuth
 
   Scenario: signing up
     Given I do not have an account yet
-     When I sign in with GitHub account
-     Then I should be on the root page
-      And I should see "John Doe"
+    When I sign in with GitHub account
+    Then I should be on the root page
+    And I should see "John Doe"
 
   Scenario: signing in
     Given I am logged out
-     When I sign in with GitHub account
-     Then I should be on the root page
-      And I should see "John Doe"
+    When I sign in with GitHub account
+    Then I should be on the root page
+    And I should see "John Doe"

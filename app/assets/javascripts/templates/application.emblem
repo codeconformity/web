@@ -1,0 +1,18 @@
+.navbar.navbar-inverse.navbar-fixed-top
+  .navbar-inner
+    .container
+      linkTo 'index' .navbar-brand  | CodeConformity
+      .nav-collapse.collapse.bs-navbar-collapse
+        ul.nav.navbar-nav
+          if currentUser.isSignedIn
+            li
+              linkTo 'sessions.destroy' | Sign Out
+          else
+            li
+              linkTo 'sessions.new' | Sign In
+
+.container#main
+  .content
+    if currentUser.isSignedIn
+      currentUser.fullName
+    == outlet
