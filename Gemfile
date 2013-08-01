@@ -2,14 +2,14 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 
-gem 'bootstrap-sass'
+# gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'draper'
 gem 'ember-rails'
 gem 'ember-source', '~> 1.0.0.rc.6.3'
 gem 'emblem-rails'
-gem 'flat-ui-rails'
+# gem 'flat-ui-rails'
 gem 'grape'
 gem 'jquery-rails'
 gem 'omniauth-github'
@@ -42,6 +42,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'konacha'
   gem 'launchy'
   gem 'rspec-rails'
 end
@@ -49,5 +50,3 @@ end
 group :production do
   gem 'heroku-deflater'
 end
-
-gem "konacha", group: [:development, :test]
