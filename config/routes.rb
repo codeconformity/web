@@ -1,22 +1,15 @@
+require 'routing_constraints'
+
 Web::Application.routes.draw do
-  root 'ember#index'
+  root 'pages#index'
 
-  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
-
-  mount Api, at: '/'
-
-  class FormatTest
-    attr_accessor :mime_type
-
-    def initialize(format)
-      @mime_type = Mime::Type.lookup_by_extension(format)
-    end
-
-    def matches?(request)
-      request.format == mime_type
+  authenticate do
+    root 'ember#index', as: :dashboard
+    constraints RoutingConstraints::Format.new(:html) do
+      get '*foo', to: 'ember#index'
+      get '/',    to: 'ember#index'
     end
   end
 
-  get '*foo', to: 'ember#index', constraints: FormatTest.new(:html)
-  get '/',    to: 'ember#index', constraints: FormatTest.new(:html)
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 end
