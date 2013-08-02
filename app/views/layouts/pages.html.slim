@@ -1,1 +1,9 @@
-= yield
+doctype html
+html
+  head
+    title Web
+    = stylesheet_link_tag :pages, media: 'screen'
+    = csrf_meta_tags
+  body
+    = yield
+    = javascript_include_tag :pages
