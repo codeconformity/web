@@ -22,4 +22,4 @@ module AuthenticationHelpers
   # end
 end
 
-World(AuthenticationHelpers)
+#World(AuthenticationHelpers)

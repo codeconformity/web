@@ -1,7 +1,8 @@
 Web::Application.routes.draw do
   root 'ember#index'
 
-  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
+  devise_for :user_accounts,
+    controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 
   mount Api, at: '/'
 
