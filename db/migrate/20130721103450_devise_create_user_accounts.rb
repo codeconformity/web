@@ -5,7 +5,6 @@ class DeviseCreateUserAccounts < ActiveRecord::Migration
     create_table(:user_accounts, id: :uuid) do |t|
       t.string      :uid, null: false, default: ''
       t.string      :provider, null: false, default: ''
-      t.string      :email, null: false, default: ''
       t.datetime    :remember_created_at
       t.integer     :sign_in_count, :default => 0
       t.datetime    :current_sign_in_at
@@ -16,7 +15,6 @@ class DeviseCreateUserAccounts < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :user_accounts, :email, unique: true
     add_index :user_accounts, [:uid, :provider], unique: true
   end
 end

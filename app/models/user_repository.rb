@@ -5,7 +5,6 @@ class UserRepository
 
   default_provider :ActiveRecord
 
-  map_attribute :email,     to: 'UserAccount#email'
   map_attribute :uid,       to: 'UserAccount#uid'
   map_attribute :provider,  to: 'UserAccount#provider'
 end

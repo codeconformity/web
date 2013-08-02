@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20130802055512) do
     t.uuid     "id",                               null: false
     t.string   "uid",                 default: "", null: false
     t.string   "provider",            default: "", null: false
-    t.string   "email",               default: "", null: false
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",       default: 0
     t.datetime "current_sign_in_at"
@@ -33,7 +32,6 @@ ActiveRecord::Schema.define(version: 20130802055512) do
     t.datetime "updated_at"
   end
 
-  add_index "user_accounts", ["email"], name: "index_user_accounts_on_email", unique: true, using: :btree
   add_index "user_accounts", ["uid", "provider"], name: "index_user_accounts_on_uid_and_provider", unique: true, using: :btree
 
   create_table "users", id: false, force: true do |t|
@@ -41,9 +39,11 @@ ActiveRecord::Schema.define(version: 20130802055512) do
     t.string "nickname",   default: "", null: false
     t.string "first_name"
     t.string "last_name"
+    t.string "email",      default: "", null: false
     t.string "avatar_url"
   end
 
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["nickname"], name: "index_users_on_nickname", unique: true, using: :btree
 
 end
