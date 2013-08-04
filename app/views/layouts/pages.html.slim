@@ -5,5 +5,18 @@ html
     = stylesheet_link_tag :pages, media: 'screen'
     = csrf_meta_tags
   body
-    = yield
+    #wrap
+      #header
+        .container
+          ul.nav.nav-pills.pull-right
+            li = link_to 'Sign in'
+          h3 Code Conformity
+
+      #content
+        = yield
+    #footer
+      .container
+        p.credit.text-muted
+          | &copy; 2013 Code Conformity Team
+
     = javascript_include_tag :pages

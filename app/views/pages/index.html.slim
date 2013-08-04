@@ -1,2 +1,29 @@
-h1 Pages#index
-p Find me in app/views/pages/index.html.slim
+.container
+  .jumbotron
+    h1 Pages#index
+    p.lead Find me in app/views/pages/index.html.slim
+    p = link_to 'Sign up today with GitHub', nil, class: 'btn btn-large btn-outline'
+
+#features
+  .container
+    .row
+      .col-lg-4
+        h4 Automate
+        p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
+      .col-lg-4
+        h4 Collaborate
+        p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
+        p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
+      .col-lg-4
+        h4 Deliver quality software
+        p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
+
+#screenshots
+  .container
+    .row
+      .col-lg-6
+        a.thumbnail
+          img src='http://placehold.it/1024x768'
+      .col-lg-6
+        a.thumbnail
+          img src='http://placehold.it/1024x768'

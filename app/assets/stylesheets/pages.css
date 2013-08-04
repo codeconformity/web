@@ -2,3 +2,134 @@
  *= require bootstrap_and_overrides
  *= require_self
  */
+
+/* Header styles
+-------------------------------------------------- */
+
+#header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+/* Make the masthead heading the same height as the navigation */
+#header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 19px;
+  line-height: 40px;
+  font-weight: 300;
+}
+#header .nav-pills > li > a {
+  color: #bdc3c7;
+  font-weight: 300;
+}
+
+/* Jumbotron styles
+-------------------------------------------------- */
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  background: none;
+}
+.jumbotron h1 {
+  font-weight: 300;
+}
+.jumbotron .btn-outline {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 18px 24px;
+  font-size: 21px;
+}
+.btn-outline {
+  color: #5cb85c;
+  background-color: transparent;
+  border-color: #5cb85c;
+}
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+
+/* List of features styles
+-------------------------------------------------- */
+
+#features {
+  color: #fff;
+  background: #34495e;
+  margin: 40px 0;
+  padding: 40px 0;
+}
+#features p + h4 {
+  margin-top: 28px;
+}
+
+/* List of screenshots styles
+-------------------------------------------------- */
+#screenshots {
+  margin: 40px 0;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  background-color: #ecf0f1;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+  #footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+#footer .credit {
+  margin: 20px 0;
+}
+
+/* Responsive: Portrait tablets and up
+-------------------------------------------------- */
+
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  #header,
+  #content,
+  #footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  #header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
