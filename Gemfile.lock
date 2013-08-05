@@ -18,6 +18,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    abstract_type (0.0.6)
     actionmailer (4.0.0)
       actionpack (= 4.0.0)
       mail (~> 2.5.3)
@@ -44,6 +45,8 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    adamantium (0.0.11)
+      ice_nine (~> 0.8.0)
     addressable (2.3.5)
     arel (4.0.0)
     atomic (1.1.10)
@@ -66,6 +69,9 @@ GEM
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
     coderay (1.0.9)
+    coercible (0.2.0)
+      backports (~> 3.0, >= 3.1.0)
+      descendants_tracker (~> 0.0.1)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -84,7 +90,11 @@ GEM
       capybara (>= 1.1.2)
       cucumber (>= 1.1.8)
       nokogiri (>= 1.5.0)
-    database_cleaner (1.0.1)
+    database_cleaner (1.1.1)
+    datamappify (0.60.0)
+      activemodel (>= 4.0.0.rc1, < 5)
+      hooks (~> 0.3.0)
+      virtus (>= 1.0.0.beta0, <= 2.0)
     descendants_tracker (0.0.1)
     devise (3.0.0)
       bcrypt-ruby (~> 3.0)
@@ -144,7 +154,7 @@ GEM
       rack-accept
       rack-mount
       virtus
-    guard (1.8.1)
+    guard (1.8.2)
       formatador (>= 0.2.4)
       listen (>= 1.0.0)
       lumberjack (>= 1.0.2)
@@ -168,12 +178,14 @@ GEM
     heroku-deflater (0.5.1)
       rack (>= 1.4.5)
     hike (1.2.3)
+    hooks (0.3.1)
     http_parser.rb (0.5.3)
     httparty (0.11.0)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
     httpauth (0.2.0)
     i18n (0.6.4)
+    ice_nine (0.8.0)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -271,7 +283,7 @@ GEM
     rspec-core (2.14.4)
     rspec-expectations (2.14.0)
       diff-lcs (>= 1.1.3, < 2.0)
-    rspec-mocks (2.14.1)
+    rspec-mocks (2.14.2)
     rspec-rails (2.14.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
@@ -284,9 +296,11 @@ GEM
       railties (>= 4.0.0.beta, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
-    slim (2.0.0)
-      temple (~> 0.6.5)
-      tilt (~> 1.3, >= 1.3.3)
+    shoulda-matchers (2.2.0)
+      activesupport (>= 3.0.0)
+    slim (2.0.1)
+      temple (~> 0.6.6)
+      tilt (>= 1.3.3, < 2.1)
     slim-rails (2.0.1)
       actionpack (>= 3.0, < 4.1)
       activesupport (>= 3.0, < 4.1)
@@ -302,7 +316,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    temple (0.6.5)
+    temple (0.6.6)
     therubyracer (0.11.4)
       libv8 (~> 3.11.8.12)
       ref
@@ -317,8 +331,10 @@ GEM
     uglifier (2.1.2)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
-    virtus (0.5.5)
-      backports (~> 3.3)
+    virtus (1.0.0.beta0)
+      abstract_type (~> 0.0.5)
+      adamantium (~> 0.0.7)
+      coercible (~> 0.2)
       descendants_tracker (~> 0.0.1)
     warden (1.2.3)
       rack (>= 1.0)
@@ -333,6 +349,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   cucumber-rails
   database_cleaner
+  datamappify
   devise
   dotenv-rails
   draper
@@ -361,6 +378,7 @@ DEPENDENCIES
   rails (~> 4.0.0)
   rspec-rails
   sass-rails
+  shoulda-matchers
   slim-rails
   therubyracer
   uglifier (>= 1.3.0)
