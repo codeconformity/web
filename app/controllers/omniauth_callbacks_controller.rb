@@ -5,7 +5,8 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def github
     user = authentication_service.process(auth_hash)
-    sign_in_and_redirect user, event: :authentication
+    user_account = UserAccount.where(user_id: user.id).first
+    sign_in_and_redirect user_account, event: :authentication
   end
 
   private
