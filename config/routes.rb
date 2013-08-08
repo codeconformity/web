@@ -1,7 +1,12 @@
 require 'routing_constraints'
 
 Web::Application.routes.draw do
-  root 'pages#index'
+  unauthenticated do
+    root 'pages#index'
+
+    devise_for :user_accounts,
+      controllers: { omniauth_callbacks: 'omniauth_callbacks' }
+  end
 
   authenticate do
     root 'ember#index', as: :dashboard
@@ -13,7 +18,4 @@ Web::Application.routes.draw do
       get '/',    to: 'ember#index'
     end
   end
-
-  devise_for :user_accounts,
-    controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 end
