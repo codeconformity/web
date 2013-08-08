@@ -1,5 +1,5 @@
 Given(/^I do not have an account yet$/) do
-  User.destroy_all(nickname: 'johndoe')
+  UserRepository.all.each(&:destroy)
 end
 
 Given(/^I am logged out$/) do

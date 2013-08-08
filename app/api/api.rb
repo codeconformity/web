@@ -11,7 +11,11 @@ class Api < Grape::API
     end
 
     def current_user
-      warden.user
+      UserRepository.find(current_user_account.user_id) if authenticated?
+    end
+
+    def current_user_account
+      warden.user(:user_account)
     end
 
     def authenticated?
