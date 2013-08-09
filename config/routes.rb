@@ -1,11 +1,11 @@
 require 'routing_constraints'
 
 Web::Application.routes.draw do
+  devise_for :user_accounts,
+    controllers: { omniauth_callbacks: 'omniauth_callbacks' }
+
   unauthenticated do
     root 'pages#index'
-
-    devise_for :user_accounts,
-      controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   end
 
   authenticate do

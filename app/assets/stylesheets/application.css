@@ -2,3 +2,56 @@
  *= require bootstrap
  *= require_self
  */
+
+/* Application
+-------------------------------------------------- */
+
+#app {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+#app-navbar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  width: 80px;
+  background: #2c3e50;
+}
+#app-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 80px;
+  min-width: 700px;
+}
+
+/* Bootstrap add-ons
+-------------------------------------------------- */
+
+.navbar-fixed-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-nav {
+    float: none;
+  }
+  .navbar-nav > li {
+    float: none;
+  }
+}
