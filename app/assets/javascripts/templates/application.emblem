@@ -1,20 +1,23 @@
 #app
   #app-navbar
-    .navbar.navbar-fixed-left
-      .navbar-inner
-        linkTo 'index' .navbar-brand  | CC
-        .nav-collapse.collapse.bs-navbar-collapse
-          ul.nav.navbar-nav
+    nav.navbar.navbar-fixed-left role="navigation"
+      .navbar-header
+        linkTo 'index' .navbar-brand
+      .collapse.navbar-collapse.navbar-ex1-collapse
+        ul.nav.navbar-nav
+          li
             if currentUser.isSignedIn
-              li
-                linkTo 'sessions.destroy' | Sign Out
+              linkTo 'sessions.destroy'
+                i.glyphicon.glyphicon-list
             else
-              li
-                linkTo 'sessions.new' | Sign In
+              linkTo 'sessions.new' | Sign In
+        ul.nav.navbar-nav.navbar-bottom
+          li
+            a href="#"
+              i.glyphicon.glyphicon-cog
+
   #app-content
     .container#main
       .page-header
-        if currentUser.isSignedIn
-          h4
-            currentUser.fullName
+        h1 Dashboard
       == outlet
